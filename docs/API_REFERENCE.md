@@ -573,6 +573,21 @@ Sets the selection at the given indexes.
 - `start: number` - starting index of the selection.
 - `end: number` - first index after the selection's ending index. For just a cursor in place (no selection), `start` equals `end`.
 
+### `.setTextAlignment()`
+
+```ts
+setTextAlignment: (
+  alignment: 'left' | 'center' | 'right' | 'justify' | 'default'
+) => void;
+```
+
+Sets the text alignment for the current selection or paragraph.
+
+- `alignment: 'left' | 'center' | 'right' | 'justify' | 'default'` - the alignment to apply.
+
+> [!NOTE]
+> Text justification (`justify`) is currently not supported on Android and will fallback to `default` alignment.
+
 ### `.startMention()`
 
 ```ts
