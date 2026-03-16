@@ -50,7 +50,8 @@ open class EnrichedUnorderedListSpan(
 
       val bulletRadius = enrichedStyle.ulBulletSize / 2f
       val yPosition = (top + bottom) / 2f
-      val xPosition = x + dir * bulletRadius + enrichedStyle.ulMarginLeft
+      val markerBaseX = if (dir > 0) 0 else x
+      val xPosition = markerBaseX + dir * bulletRadius + enrichedStyle.ulMarginLeft
 
       canvas.drawCircle(xPosition, yPosition, bulletRadius, paint)
 

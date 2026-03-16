@@ -83,7 +83,8 @@ open class EnrichedCheckboxListSpan(
       val lineCenter = (top + bottom) / 2f
       val drawableTop = lineCenter - (enrichedStyle.ulCheckboxBoxSize / 2f)
 
-      canvas.withTranslation(x.toFloat() + enrichedStyle.ulCheckboxMarginLeft, drawableTop) {
+      val markerBaseX = if (dir > 0) 0f else x.toFloat()
+      canvas.withTranslation(markerBaseX + enrichedStyle.ulCheckboxMarginLeft, drawableTop) {
         checkboxDrawable.draw(this)
       }
     }
